@@ -14,7 +14,7 @@ function getAndPrintHTML (options) {
     let data = "";
     response.on('data', function(chunk){
       data += chunk;
-      console.log("Chunks: " + chunk + '\n');
+      console.log(data);
     });
   });
 }
