@@ -7,13 +7,26 @@ var requestOptions = {
 
 function print1337 (html) {
 
-let splitWords = html.split(' ');
+let splitWords = html.toLowerCase();
 
-  for (let i = 0 ; i < splitWords.length ; i++){
-    if(splitWords[i].includes('a')){
-      splitWords[i].replace(/a/gi, '4');
-    }
-  }
+if(splitWords.includes('er') && splitWords.includes('e')){
+  splitWords = splitWords.replace(/er/gi, '0r');
+}
+
+if(splitWords.includes('ck')) {
+  splitWords = splitWords.replace(/ck/gi, 'x');
+}
+
+if(splitWords.includes('you') && splitWords.includes('o')){
+  splitWords = splitWords.replace(/you/gi, 'j00');
+}
+
+splitWords = splitWords.replace(/a/gi, '4');
+splitWords = splitWords.replace(/e/gi, '3');
+splitWords = splitWords.replace(/l/gi, '1');
+splitWords = splitWords.replace(/o/gi, '0');
+splitWords = splitWords.replace(/s/gi, '5');
+splitWords = splitWords.replace(/t/gi, '7');
 
   console.log(splitWords);
 }
